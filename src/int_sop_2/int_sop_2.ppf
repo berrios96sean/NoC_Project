@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="c10gx_native_fixed_point_dsp_0"
+ megafunction_name="ALTERA_C10GX_NATIVE_FIXED_POINT_DSP"
+ specifies="all_ports">
+ <global>
+  <pin name="ay[18..0]" direction="input" scope="external" />
+  <pin name="by[18..0]" direction="input" scope="external" />
+  <pin name="ax[17..0]" direction="input" scope="external" />
+  <pin name="bx[17..0]" direction="input" scope="external" />
+  <pin name="chainin[63..0]" direction="input" scope="external" />
+  <pin name="resulta[36..0]" direction="output" scope="external" />
+  <pin name="chainout[63..0]" direction="output" scope="external" />
+ </global>
+</pinplan>

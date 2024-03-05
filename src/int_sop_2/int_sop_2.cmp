@@ -1,0 +1,12 @@
+	component int_sop_2 is
+		port (
+			ay       : in  std_logic_vector(18 downto 0) := (others => 'X'); -- ay
+			by       : in  std_logic_vector(18 downto 0) := (others => 'X'); -- by
+			ax       : in  std_logic_vector(17 downto 0) := (others => 'X'); -- ax
+			bx       : in  std_logic_vector(17 downto 0) := (others => 'X'); -- bx
+			chainin  : in  std_logic_vector(63 downto 0) := (others => 'X'); -- chainin
+			resulta  : out std_logic_vector(36 downto 0);                    -- resulta
+			chainout : out std_logic_vector(63 downto 0)                     -- chainout
+		);
+	end component int_sop_2;
+

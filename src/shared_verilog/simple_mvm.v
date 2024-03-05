@@ -411,11 +411,11 @@ assign wtemp = {8'd0, wdata};
 assign addrtemp = waddr | raddr;
 
 single_port_ram bram_instance(
-	.clk(clk),
-	.we(wen),
 	.data(wtemp),
-	.addr(addrtemp),
-	.out(rtemp)
+	.q(rtemp),
+	.address(addrtemp),
+	.wren(wen),
+	.clock(clk)
 );
 
 endmodule
@@ -576,14 +576,12 @@ assign tmp_by = {3'b0, by};
 assign result = tmp_result[31:0];
 
 int_sop_2 dsp_instance(
-	.clk(clk),
-	.reset(reset),
-	.ax(tmp_ax),
 	.ay(tmp_ay),
-	.bx(tmp_bx),
 	.by(tmp_by),
+	.ax(tmp_ax),
+	.bx(tmp_bx),
 	.chainin(chainin),
-	.result(tmp_result),
+	.resulta(tmp_result),
 	.chainout(chainout)
 );
 
