@@ -17,20 +17,20 @@ module mlp_1 (
     clk,
     reset,
 	 dispatcher0_ififo_wdata, // external I/O input for dispatcher
-	 dispatcher0_ififo_wen, // external I/O input for dispatcher
+	 dispatcher0_ififo_wen,   // external I/O input for dispatcher
 	 dispatcher1_ififo_wdata, // external I/O input for dispatcher
-	 dispatcher1_ififo_wen, // external I/O input for dispatcher
+	 dispatcher1_ififo_wen,   // external I/O input for dispatcher
 	 dispatcher2_ififo_wdata, // external I/O input for dispatcher
-	 dispatcher2_ififo_wen, // external I/O input for dispatcher
+	 dispatcher2_ififo_wen,   // external I/O input for dispatcher
 	 dispatcher3_ififo_wdata, // external I/O input for dispatcher
-	 dispatcher3_ififo_wen, // external I/O input for dispatcher
-	 collector_ofifo_rdata, // external I/O output for collector
-	 collector_ofifo_ren, // external I/O input for collector
-	 dispatcher0_ififo_rdy, // external I/O output for dispatcher
-	 dispatcher1_ififo_rdy, // external I/O output for dispatcher
-	 dispatcher2_ififo_rdy, // external I/O output for dispatcher
-	 dispatcher3_ififo_rdy, // external I/O output for dispatcher
-	 collector_ofifo_rdy // external I/O output for collector
+	 dispatcher3_ififo_wen,   // external I/O input for dispatcher
+	 collector_ofifo_rdata,   // external I/O output for collector
+	 collector_ofifo_ren,     // external I/O input for collector
+	 dispatcher0_ififo_rdy,   // external I/O output for dispatcher
+	 dispatcher1_ififo_rdy,   // external I/O output for dispatcher
+	 dispatcher2_ififo_rdy,   // external I/O output for dispatcher
+	 dispatcher3_ififo_rdy,   // external I/O output for dispatcher
+	 collector_ofifo_rdy      // external I/O output for collector
 	 
 );
 
@@ -459,7 +459,7 @@ noc_router_adapter_block noc_router_input_dispatcher0(
     .slave_tid(dispatcher0_tx_tid),
     .slave_tdest(dispatcher0_tx_tdest),
     .slave_tuser(dispatcher0_tx_tuser),
-    .slave_tlast(dispatcher0_tx_tlast),
+    .slave_tlast(dispatcher0_tx_tlast)
 
 );
 noc_router_adapter_block noc_router_input_dispatcher1(
@@ -482,7 +482,7 @@ noc_router_adapter_block noc_router_input_dispatcher1(
     .slave_tid(dispatcher1_tx_tid),
     .slave_tdest(dispatcher1_tx_tdest),
     .slave_tuser(dispatcher1_tx_tuser),
-    .slave_tlast(dispatcher1_tx_tlast),
+    .slave_tlast(dispatcher1_tx_tlast)
 
 );
 noc_router_adapter_block noc_router_input_dispatcher2(
@@ -505,7 +505,7 @@ noc_router_adapter_block noc_router_input_dispatcher2(
     .slave_tid(dispatcher2_tx_tid),
     .slave_tdest(dispatcher2_tx_tdest),
     .slave_tuser(dispatcher2_tx_tuser),
-    .slave_tlast(dispatcher2_tx_tlast),
+    .slave_tlast(dispatcher2_tx_tlast)
 
 );
 noc_router_adapter_block noc_router_input_dispatcher3(
@@ -528,7 +528,7 @@ noc_router_adapter_block noc_router_input_dispatcher3(
     .slave_tid(dispatcher3_tx_tid),
     .slave_tdest(dispatcher3_tx_tdest),
     .slave_tuser(dispatcher3_tx_tuser),
-    .slave_tlast(dispatcher3_tx_tlast),
+    .slave_tlast(dispatcher3_tx_tlast)
 
 );
 
@@ -842,7 +842,7 @@ noc_router_adapter_block noc_router_layer0_mvm0(
     .slave_tid(layer0_mvm0_tx_tid),
     .slave_tdest(layer0_mvm0_tx_tdest),
     .slave_tuser(layer0_mvm0_tx_tuser),
-    .slave_tlast(layer0_mvm0_tx_tlast),
+    .slave_tlast(layer0_mvm0_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer0_mvm1(
 	.clk(clk),
@@ -864,7 +864,7 @@ noc_router_adapter_block noc_router_layer0_mvm1(
     .slave_tid(layer0_mvm1_tx_tid),
     .slave_tdest(layer0_mvm1_tx_tdest),
     .slave_tuser(layer0_mvm1_tx_tuser),
-    .slave_tlast(layer0_mvm1_tx_tlast),
+    .slave_tlast(layer0_mvm1_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer0_mvm2(
 	.clk(clk),
@@ -886,7 +886,7 @@ noc_router_adapter_block noc_router_layer0_mvm2(
     .slave_tid(layer0_mvm2_tx_tid),
     .slave_tdest(layer0_mvm2_tx_tdest),
     .slave_tuser(layer0_mvm2_tx_tuser),
-    .slave_tlast(layer0_mvm2_tx_tlast),
+    .slave_tlast(layer0_mvm2_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer0_mvm3(
 	.clk(clk),
@@ -908,7 +908,7 @@ noc_router_adapter_block noc_router_layer0_mvm3(
     .slave_tid(layer0_mvm3_tx_tid),
     .slave_tdest(layer0_mvm3_tx_tdest),
     .slave_tuser(layer0_mvm3_tx_tuser),
-    .slave_tlast(layer0_mvm3_tx_tlast),
+    .slave_tlast(layer0_mvm3_tx_tlast)
 );
 
 // layer 1 router blocks
@@ -932,7 +932,7 @@ noc_router_adapter_block noc_router_layer1_mvm0(
     .slave_tid(layer1_mvm0_tx_tid),
     .slave_tdest(layer1_mvm0_tx_tdest),
     .slave_tuser(layer1_mvm0_tx_tuser),
-    .slave_tlast(layer1_mvm0_tx_tlast),
+    .slave_tlast(layer1_mvm0_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer1_mvm1(
 	.clk(clk),
@@ -954,7 +954,7 @@ noc_router_adapter_block noc_router_layer1_mvm1(
     .slave_tid(layer1_mvm1_tx_tid),
     .slave_tdest(layer1_mvm1_tx_tdest),
     .slave_tuser(layer1_mvm1_tx_tuser),
-    .slave_tlast(layer1_mvm1_tx_tlast),
+    .slave_tlast(layer1_mvm1_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer1_mvm2(
 	.clk(clk),
@@ -976,7 +976,7 @@ noc_router_adapter_block noc_router_layer1_mvm2(
     .slave_tid(layer1_mvm2_tx_tid),
     .slave_tdest(layer1_mvm2_tx_tdest),
     .slave_tuser(layer1_mvm2_tx_tuser),
-    .slave_tlast(layer1_mvm2_tx_tlast),
+    .slave_tlast(layer1_mvm2_tx_tlast)
 );
 
 
@@ -1001,7 +1001,7 @@ noc_router_adapter_block noc_router_layer2_mvm0(
     .slave_tid(layer2_mvm0_tx_tid),
     .slave_tdest(layer2_mvm0_tx_tdest),
     .slave_tuser(layer2_mvm0_tx_tuser),
-    .slave_tlast(layer2_mvm0_tx_tlast),
+    .slave_tlast(layer2_mvm0_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer2_mvm1(
 	.clk(clk),
@@ -1023,7 +1023,7 @@ noc_router_adapter_block noc_router_layer2_mvm1(
     .slave_tid(layer2_mvm1_tx_tid),
     .slave_tdest(layer2_mvm1_tx_tdest),
     .slave_tuser(layer2_mvm1_tx_tuser),
-    .slave_tlast(layer2_mvm1_tx_tlast),
+    .slave_tlast(layer2_mvm1_tx_tlast)
 );
 
 // layer 3 router blocks
@@ -1047,7 +1047,7 @@ noc_router_adapter_block noc_router_layer3_mvm0(
     .slave_tid(layer3_mvm0_tx_tid),
     .slave_tdest(layer3_mvm0_tx_tdest),
     .slave_tuser(layer3_mvm0_tx_tuser),
-    .slave_tlast(layer3_mvm0_tx_tlast),
+    .slave_tlast(layer3_mvm0_tx_tlast)
 );
 noc_router_adapter_block noc_router_layer3_mvm1(
 	.clk(clk),
@@ -1069,7 +1069,7 @@ noc_router_adapter_block noc_router_layer3_mvm1(
     .slave_tid(layer3_mvm1_tx_tid),
     .slave_tdest(layer3_mvm1_tx_tdest),
     .slave_tuser(layer3_mvm1_tx_tuser),
-    .slave_tlast(layer3_mvm1_tx_tlast),
+    .slave_tlast(layer3_mvm1_tx_tlast)
 );
 
 // collector router block
@@ -1093,7 +1093,7 @@ noc_router_adapter_block noc_router_output_collector(
     .slave_tid(8'd0),
     .slave_tdest(8'd0),
     .slave_tuser(8'd0),
-    .slave_tlast(1'd0),
+    .slave_tlast(1'd0)
 );
 
 
