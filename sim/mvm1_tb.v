@@ -7,14 +7,14 @@ parameter DATA_WIDTH = 64;
 // Testbench Signals
 reg clk;
 reg reset;
-reg [DATA_WIDTH-1:0] dispatcher0_ififo_wdata_r;
-reg dispatcher0_ififo_wen_r;
-reg [DATA_WIDTH-1:0] dispatcher1_ififo_wdata_r;
-reg dispatcher1_ififo_wen_r;
-reg [DATA_WIDTH-1:0] dispatcher2_ififo_wdata_r;
-reg dispatcher2_ififo_wen_r;
-reg [DATA_WIDTH-1:0] dispatcher3_ififo_wdata_r;
-reg dispatcher3_ififo_wen_r;
+// reg [DATA_WIDTH-1:0] dispatcher0_ififo_wdata_r;
+// reg dispatcher0_ififo_wen_r;
+// reg [DATA_WIDTH-1:0] dispatcher1_ififo_wdata_r;
+// reg dispatcher1_ififo_wen_r;
+// reg [DATA_WIDTH-1:0] dispatcher2_ififo_wdata_r;
+// reg dispatcher2_ififo_wen_r;
+// reg [DATA_WIDTH-1:0] dispatcher3_ififo_wdata_r;
+// reg dispatcher3_ififo_wen_r;
 
 wire [DATA_WIDTH-1:0] dispatcher0_ififo_wdata;
 wire dispatcher0_ififo_wen;
@@ -30,14 +30,14 @@ reg collector_ofifo_ren;
 wire dispatcher0_ififo_rdy, dispatcher1_ififo_rdy, dispatcher2_ififo_rdy, dispatcher3_ififo_rdy;
 wire collector_ofifo_rdy;
 
-assign dispatcher0_ififo_wdata = dispatcher0_ififo_wdata_r;
-assign dispatcher0_ififo_wen   = dispatcher0_ififo_wen_r;
-assign dispatcher1_ififo_wdata = dispatcher1_ififo_wdata_r;
-assign dispatcher1_ififo_wen   = dispatcher1_ififo_wen_r;
-assign dispatcher2_ififo_wdata = dispatcher2_ififo_wdata_r;
-assign dispatcher2_ififo_wen   = dispatcher2_ififo_wen_r;
-assign dispatcher3_ififo_wdata = dispatcher3_ififo_wdata_r;
-assign dispatcher3_ififo_wen   = dispatcher3_ififo_wen_r;
+// assign dispatcher0_ififo_wdata = dispatcher0_ififo_wdata_r;
+// assign dispatcher0_ififo_wen   = dispatcher0_ififo_wen_r;
+// assign dispatcher1_ififo_wdata = dispatcher1_ififo_wdata_r;
+// assign dispatcher1_ififo_wen   = dispatcher1_ififo_wen_r;
+// assign dispatcher2_ififo_wdata = dispatcher2_ififo_wdata_r;
+// assign dispatcher2_ififo_wen   = dispatcher2_ififo_wen_r;
+// assign dispatcher3_ififo_wdata = dispatcher3_ififo_wdata_r;
+// assign dispatcher3_ififo_wen   = dispatcher3_ififo_wen_r;
 
 // Instance of traffic generators 
 axis_traffic_gen #(.DATA_WIDTH(DATA_WIDTH)) dispatcher0_gen (
@@ -97,14 +97,14 @@ initial begin
     // Initialize Inputs
     clk = 0;
     reset = 1;
-    dispatcher0_ififo_wdata_r   = 0;
-    dispatcher0_ififo_wen_r     = 0;
-    dispatcher1_ififo_wdata_r   = 0;
-    dispatcher1_ififo_wen_r     = 0;
-    dispatcher2_ififo_wdata_r   = 0;
-    dispatcher2_ififo_wen_r     = 0;
-    dispatcher3_ififo_wdata_r   = 0;
-    dispatcher3_ififo_wen_r     = 0;
+    // dispatcher0_ififo_wdata_r   = 0;
+    // dispatcher0_ififo_wen_r     = 0;
+    // dispatcher1_ififo_wdata_r   = 0;
+    // dispatcher1_ififo_wen_r     = 0;
+    // dispatcher2_ififo_wdata_r   = 0;
+    // dispatcher2_ififo_wen_r     = 0;
+    // dispatcher3_ififo_wdata_r   = 0;
+    // dispatcher3_ififo_wen_r     = 0;
     collector_ofifo_ren         = 0; 
 
     // clear reset 
@@ -112,10 +112,10 @@ initial begin
     reset = 0;
 
     //dispatcher0_ififo_wdata_r   = 0;
-    dispatcher0_ififo_wen_r     = 1;
-    dispatcher1_ififo_wen_r     = 1;
-    dispatcher2_ififo_wen_r     = 1;
-    dispatcher3_ififo_wen_r     = 1;
+    // dispatcher0_ififo_wen_r     = 1;
+    // dispatcher1_ififo_wen_r     = 1;
+    // dispatcher2_ififo_wen_r     = 1;
+    // dispatcher3_ififo_wen_r     = 1;
     #50;
 
     // dispatcher0_ififo_wen_r     = 0;
