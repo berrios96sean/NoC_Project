@@ -1,0 +1,9 @@
+alias vsim='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/questa_fe/bin/vsim'
+alias set_LM='export LM_LICENSE_FILE="27002@en4228283l.cidse.dhcp.asu.edu"'
+alias vcom='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/questa_fe/bin/vcom'
+alias vlib='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/questa_fe/bin/vlib'
+alias vlog='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/questa_fe/bin/vlog'
+alias quartus='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/quartus/bin/quartus &'
+alias vopt='/mnt/vault0/tools/Intel/intelFPGA_pro/23.4/questa_fe/bin/vopt'
+
+
