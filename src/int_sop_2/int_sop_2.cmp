@@ -6,7 +6,13 @@
 			bx       : in  std_logic_vector(17 downto 0) := (others => 'X'); -- bx
 			chainin  : in  std_logic_vector(63 downto 0) := (others => 'X'); -- chainin
 			resulta  : out std_logic_vector(36 downto 0);                    -- resulta
-			chainout : out std_logic_vector(63 downto 0)                     -- chainout
+			chainout : out std_logic_vector(63 downto 0);                    -- chainout
+			clk0     : in  std_logic                     := 'X';             -- clk
+			clk1     : in  std_logic                     := 'X';             -- clk
+			clk2     : in  std_logic                     := 'X';             -- clk
+			ena      : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- ena
+			aclr0    : in  std_logic                     := 'X';             -- reset
+			aclr1    : in  std_logic                     := 'X'              -- reset
 		);
 	end component int_sop_2;
 

@@ -4,6 +4,11 @@ Info: qsys-generate /mnt/vault0/sfberrio/quartus_projects/int_sop_2.ip --block-s
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: The 'chainin' input port must be sourced from the 'chainout' output port from preceding DSP block.
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: When output cascade is enabled, the full 64-bit chain wire must be fully connected.
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: The 'chainout' output port must be connected to the 'chainin' input port of the next DSP block.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock and clock-enable pairs, and two asynchronous clear signals are supported.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock signals are connected to a 3-bit 'clk' input port, clk[2:0]. clk[0] represents clock source 0, clk[1] represents clock source 1, and clk[2] represents clock source 2.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock-enable signals are connected to a 3-bit 'ena' input port, ena[2:0]. ena[0] represents clock-enable source 0, ena[1] represents clock-enable source 1, and ena[2] represents clock-enable source 2.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Two asynchronous clear signals are connected to a 2-bit 'aclr' input port, aclr[1:0]. aclr[0] represents asynchronous clear source 0, aclr[1] represents asynchronous clear source 1.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Asynchronous clear signals are dedicated: all input registers use aclr[0] and all output registers and pipeline registers use aclr[1].
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
@@ -11,12 +16,20 @@ Info: qsys-generate /mnt/vault0/sfberrio/quartus_projects/int_sop_2.ip --synthes
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: The 'chainin' input port must be sourced from the 'chainout' output port from preceding DSP block.
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: When output cascade is enabled, the full 64-bit chain wire must be fully connected.
 Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Info: The 'chainout' output port must be connected to the 'chainin' input port of the next DSP block.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock and clock-enable pairs, and two asynchronous clear signals are supported.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock signals are connected to a 3-bit 'clk' input port, clk[2:0]. clk[0] represents clock source 0, clk[1] represents clock source 1, and clk[2] represents clock source 2.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Three clock-enable signals are connected to a 3-bit 'ena' input port, ena[2:0]. ena[0] represents clock-enable source 0, ena[1] represents clock-enable source 1, and ena[2] represents clock-enable source 2.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Two asynchronous clear signals are connected to a 2-bit 'aclr' input port, aclr[1:0]. aclr[0] represents asynchronous clear source 0, aclr[1] represents asynchronous clear source 1.
+Info: int_sop_2.c10gx_native_fixed_point_dsp_0: Clock scheme: Asynchronous clear signals are dedicated: all input registers use aclr[0] and all output registers and pipeline registers use aclr[1].
 Info: int_sop_2: "Transforming system: int_sop_2"
 Info: int_sop_2: "Naming system components in system: int_sop_2"
 Info: int_sop_2: "Processing generation queue"
 Info: int_sop_2: "Generating: int_sop_2"
-Info: int_sop_2: "Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq"
-Info: c10gx_native_fixed_point_dsp_0: generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq
+Info: int_sop_2: "Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi"
+Info: c10gx_native_fixed_point_dsp_0: generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi
+Info: c10gx_native_fixed_point_dsp_0: Info:These port are represented as aclr and clk:aclr1
+Info: c10gx_native_fixed_point_dsp_0: Info:These port are represented as aclr and clk:clk1
+Info: c10gx_native_fixed_point_dsp_0: Info:These port are represented as aclr and clk:clk2
 Info: int_sop_2: Done "int_sop_2" with 2 modules, 2 files
 Info: Finished: Create HDL design files for synthesis
 Info: Starting: Generate IP Core Documentation

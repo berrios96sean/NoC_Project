@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2024.03.04.22:27:05"
+ date="2024.03.06.09:20:58"
  outputDirectory="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/">
  <perimeter>
   <parameter
@@ -37,6 +37,60 @@
      name="AUTO_BOARD"
      type="String"
      defaultValue="default"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK0_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK0_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK0_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK1_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK1_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK1_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK2_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
   <interface name="ay" kind="conduit" start="0">
@@ -81,14 +135,57 @@
    <property name="prSafe" value="false" />
    <port name="chainout" direction="output" role="chainout" width="64" />
   </interface>
+  <interface name="clk0" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk0" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clk1" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk1" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clk2" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk2" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="ena" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="ena" direction="input" role="ena" width="3" />
+  </interface>
+  <interface name="aclr0" kind="reset" start="0">
+   <property name="associatedClock" value="clk0" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="aclr0" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="aclr1" kind="reset" start="0">
+   <property name="associatedClock" value="clk0" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="aclr1" direction="input" role="reset" width="1" />
+  </interface>
  </perimeter>
  <entity kind="int_sop_2" version="1.0" name="int_sop_2">
+  <parameter name="AUTO_CLK0_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK2_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLK0_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK2_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK2_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 GX" />
   <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="AUTO_CLK1_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK1_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="5" />
+  <parameter name="AUTO_CLK1_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_DEVICE" value="10CX220YF780I5G" />
+  <parameter name="AUTO_CLK0_CLOCK_RATE" value="-1" />
   <generatedFiles>
    <file
        path="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/synth/int_sop_2.v"
@@ -108,20 +205,23 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="int_sop_2">"Generating: int_sop_2"</message>
-   <message level="Info" culprit="int_sop_2">"Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq"</message>
-   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq</message>
+   <message level="Info" culprit="int_sop_2">"Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi"</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:aclr1</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:clk1</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:clk2</message>
   </messages>
  </entity>
  <entity
    kind="altera_c10gx_native_fixed_point_dsp"
    version="19.1.0"
-   name="int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq">
+   name="int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi">
   <parameter name="by_width" value="19" />
   <parameter name="delay_scan_out_by" value="false" />
-  <parameter name="bx_clock" value="none" />
-  <parameter name="ax_clock" value="none" />
+  <parameter name="bx_clock" value="0" />
+  <parameter name="ax_clock" value="0" />
   <parameter name="accumulate_clock" value="none" />
-  <parameter name="output_clock" value="none" />
+  <parameter name="output_clock" value="0" />
   <parameter name="sub_pipeline_clock" value="none" />
   <parameter name="delay_scan_out_ay" value="false" />
   <parameter name="az_width" value="0" />
@@ -153,14 +253,14 @@
   <parameter name="bz_clock" value="none" />
   <parameter name="preadder_subtract_b" value="false" />
   <parameter name="preadder_subtract_a" value="false" />
-  <parameter name="ay_scan_in_clock" value="none" />
+  <parameter name="ay_scan_in_clock" value="0" />
   <parameter name="result_b_width" value="0" />
   <parameter name="enable_sub" value="false" />
   <parameter name="bz_width" value="0" />
   <parameter name="enable_negate" value="false" />
   <parameter name="signed_max" value="true" />
   <parameter name="signed_may" value="true" />
-  <parameter name="by_clock" value="none" />
+  <parameter name="by_clock" value="0" />
   <parameter name="coef_b_7" value="0" />
   <parameter name="bx_width" value="18" />
   <parameter name="load_const_clock" value="none" />
@@ -186,12 +286,12 @@
   <parameter name="gui_chainout_enable" value="true" />
   <generatedFiles>
    <file
-       path="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/altera_c10gx_native_fixed_point_dsp_1910/synth/int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq.v"
+       path="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/altera_c10gx_native_fixed_point_dsp_1910/synth/int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi.v"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/altera_c10gx_native_fixed_point_dsp_1910/synth/int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq.v"
+       path="/mnt/vault0/sfberrio/quartus_projects/int_sop_2/altera_c10gx_native_fixed_point_dsp_1910/synth/int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi.v"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -201,8 +301,11 @@
   <childSourceFiles/>
   <instantiator instantiator="int_sop_2" as="c10gx_native_fixed_point_dsp_0" />
   <messages>
-   <message level="Info" culprit="int_sop_2">"Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq"</message>
-   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq</message>
+   <message level="Info" culprit="int_sop_2">"Generating: int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi"</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">generating top-level entity int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:aclr1</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:clk1</message>
+   <message level="Info" culprit="c10gx_native_fixed_point_dsp_0">Info:These port are represented as aclr and clk:clk2</message>
   </messages>
  </entity>
 </deploy>

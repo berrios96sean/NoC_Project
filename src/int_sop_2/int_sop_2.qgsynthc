@@ -26,7 +26,7 @@
           </parameter>
           <parameter>
             <name>ax_clock</name>
-            <value>none</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>ax_width</name>
@@ -34,7 +34,7 @@
           </parameter>
           <parameter>
             <name>ay_scan_in_clock</name>
-            <value>none</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>ay_scan_in_width</name>
@@ -54,7 +54,7 @@
           </parameter>
           <parameter>
             <name>bx_clock</name>
-            <value>none</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>bx_width</name>
@@ -62,7 +62,7 @@
           </parameter>
           <parameter>
             <name>by_clock</name>
-            <value>none</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>by_use_scan_in</name>
@@ -238,7 +238,7 @@
           </parameter>
           <parameter>
             <name>output_clock</name>
-            <value>none</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>preadder_subtract_a</name>
@@ -293,7 +293,7 @@
         <className>altera_c10gx_native_fixed_point_dsp</className>
         <version>19.1.0</version>
         <name>c10gx_native_fixed_point_dsp_0</name>
-        <uniqueName>int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_a67kikq</uniqueName>
+        <uniqueName>int_sop_2_altera_c10gx_native_fixed_point_dsp_1910_6lgytvi</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>int_sop_2.c10gx_native_fixed_point_dsp_0</path>

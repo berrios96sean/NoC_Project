@@ -582,7 +582,9 @@ int_sop_2 dsp_instance(
 	.bx(tmp_bx),
 	.chainin(chainin),
 	.resulta(tmp_result),
-	.chainout(chainout)
+	.chainout(chainout),
+	.clk0(clk),
+	.aclr0(reset)
 );
 
 endmodule
