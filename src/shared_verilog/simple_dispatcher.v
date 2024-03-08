@@ -1,38 +1,25 @@
 /* Simplified dispatcher used for FPT'23 */
 
-module dispatcher (
-	clk,
-	rst,
-	tx_tvalid,
-	tx_tdata,
-	tx_tstrb,
-	tx_tkeep,
-	tx_tid,
-	tx_tdest,
-	tx_tuser,
-	tx_tlast,
-	tx_tready,
-	ififo_wdata,
-	ififo_wen,
-	ififo_rdy
+module dispatcher #(
+	parameter noc_dw = 512, //NoC Data Width
+	parameter byte_dw = 8,
+	parameter user_dw = 32 
+	)(
+	input  wire                        clk,
+	input  wire                        rst,
+	output wire                        tx_tvalid,
+	output wire [ noc_dw - 1:0]        tx_tdata,
+	output wire [byte_dw - 1:0]        tx_tstrb,
+	output wire [byte_dw - 1:0]        tx_tkeep,
+	output wire [byte_dw - 1:0]        tx_tid,
+	output wire [byte_dw - 1:0]        tx_tdest,
+	output wire [user_dw - 1:0]        tx_tuser,
+	output wire                        tx_tlast,
+	input  wire                        tx_tready,
+	input  wire [noc_dw/byte_dw - 1:0] ififo_wdata,
+	input  wire                        ififo_wen,
+	output wire                        ififo_rdy
 );
-
-input  clk;
-input  rst;
-// Tx interface
-output tx_tvalid;
-output [511:0] tx_tdata;
-output [63:0] tx_tstrb;
-output [63:0] tx_tkeep;
-output [7:0] tx_tid;
-output [7:0] tx_tdest;
-output [31:0] tx_tuser;
-output tx_tlast;
-input  tx_tready;
-// External FIFO IO
-input  [63:0] ififo_wdata;
-input  ififo_wen;
-output ififo_rdy;
 
 wire fifo_full_signal, fifo_almost_full_signal, fifo_empty_signal;
 wire [511:0] fifo_rdata;

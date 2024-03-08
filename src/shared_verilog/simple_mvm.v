@@ -1,50 +1,50 @@
 /* Simplified MVM used for FPT'23 */
 
 module mvm_top (
-	clk,
-	rst,
-	rx_tvalid,
-	rx_tdata,
-	rx_tstrb,
-	rx_tkeep,
-	rx_tid,
-	rx_tdest,
-	rx_tuser,
-	rx_tlast,
-	rx_tready,	
-	tx_tvalid,
-	tx_tdata,
-	tx_tstrb,
-	tx_tkeep,
-	tx_tid,
-	tx_tdest,
-	tx_tuser,
-	tx_tlast,
-	tx_tready
+	input wire          clk,
+	input wire          rst,
+	input wire          rx_tvalid,
+	input wire  [511:0] rx_tdata,
+	input wire  [ 63:0] rx_tstrb,
+	input wire  [ 63:0] rx_tkeep,
+	input wire  [  7:0] rx_tid,
+	input wire  [  7:0] rx_tdest,
+	input wire  [ 31:0] rx_tuser,
+	input wire          rx_tlast,
+	output wire         rx_tready,	
+	output wire         tx_tvalid,
+	output wire [511:0] tx_tdata,
+	output wire [ 63:0] tx_tstrb,
+	output wire [ 63:0] tx_tkeep,
+	output wire [  7:0] tx_tid,
+	output wire [  7:0] tx_tdest,
+	output wire [ 31:0] tx_tuser,
+	output wire         tx_tlast,
+	input  wire         tx_tready
 );
 
-input wire          clk;
-input wire          rst;
-// Rx interface
-input wire          rx_tvalid;
-input wire  [511:0] rx_tdata;
-input wire  [ 63:0] rx_tstrb;
-input wire  [ 63:0] rx_tkeep;
-input wire  [  7:0] rx_tid;
-input wire  [  7:0] rx_tdest;
-input wire  [ 31:0] rx_tuser;
-input wire          rx_tlast;
-output wire         rx_tready;	
-// Tx interface
-output wire         tx_tvalid;
-output wire [511:0] tx_tdata;
-output wire [ 63:0] tx_tstrb;
-output wire [ 63:0] tx_tkeep;
-output wire [  7:0] tx_tid;
-output wire [  7:0] tx_tdest;
-output wire [ 31:0] tx_tuser;
-output wire         tx_tlast;
-input  wire         tx_tready;
+// input wire          clk;
+// input wire          rst;
+// // Rx interface
+// input wire          rx_tvalid;
+// input wire  [511:0] rx_tdata;
+// input wire  [ 63:0] rx_tstrb;
+// input wire  [ 63:0] rx_tkeep;
+// input wire  [  7:0] rx_tid;
+// input wire  [  7:0] rx_tdest;
+// input wire  [ 31:0] rx_tuser;
+// input wire          rx_tlast;
+// output wire         rx_tready;	
+// // Tx interface
+// output wire         tx_tvalid;
+// output wire [511:0] tx_tdata;
+// output wire [ 63:0] tx_tstrb;
+// output wire [ 63:0] tx_tkeep;
+// output wire [  7:0] tx_tid;
+// output wire [  7:0] tx_tdest;
+// output wire [ 31:0] tx_tuser;
+// output wire         tx_tlast;
+// input  wire         tx_tready;
 
 // Hook up unused Rx signals to dummy registers to avoid being synthesized away
 reg [63:0] dummy_rx_tstrb;

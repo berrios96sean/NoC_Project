@@ -1,38 +1,25 @@
 /* Simplified dispatcher used for FPT'23 */
 
-module collector (
-  clk,
-  rst,
-  rx_tvalid,
-  rx_tdata,
-  rx_tstrb,
-  rx_tkeep,
-  rx_tid,
-  rx_tdest,
-  rx_tuser,
-  rx_tlast,
-  rx_tready,
-  ofifo_rdata,
-  ofifo_ren,
-  ofifo_rdy
+module collector #(
+  parameter noc_dw = 512, //NoC Data Width
+  parameter byte_dw = 8,
+  parameter user_dw = 32 
+  )(
+  input                               clk,
+  input                               rst,
+  input  wire                         rx_tvalid,
+  input  wire [        noc_dw - 1:0]  rx_tdata,
+  input  wire [noc_dw/byte_dw - 1:0]  rx_tstrb,
+  input  wire [noc_dw/byte_dw - 1:0]  rx_tkeep,
+  input  wire [        byte_dw -1:0]  rx_tid,
+  input  wire [        byte_dw -1:0]  rx_tdest,
+  input  wire [        user_dw -1:0]  rx_tuser,
+  input  wire                         rx_tlast,
+  output wire                         rx_tready,
+  output wire [noc_dw/byte_dw - 1:0]  ofifo_rdata,
+  input  wire                         ofifo_ren,
+  output wire                         ofifo_rdy
 );
-
-input  clk;
-input  rst;
-// Rx interface
-input  rx_tvalid;
-input  [511:0] rx_tdata;
-input  [63:0] rx_tstrb;
-input  [63:0] rx_tkeep;
-input  [7:0] rx_tid;
-input  [7:0] rx_tdest;
-input  [31:0] rx_tuser;
-input  rx_tlast;
-output rx_tready;
-// External FIFO IO
-output [63:0] ofifo_rdata;
-input  ofifo_ren;
-output ofifo_rdy;
 
 wire fifo_push;
 assign fifo_push = rx_tvalid && rx_tready;

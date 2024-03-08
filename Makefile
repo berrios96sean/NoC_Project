@@ -10,3 +10,4 @@ clean:
 	rm -rf ./transcript
 	rm -rf ./*.log
 	rm -rf ./*.rec
+	rm -rf ./work
