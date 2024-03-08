@@ -1,5 +1,7 @@
 /* Simplified MVM used for FPT'23 */
 
+// This version uses generated IP. Currently not including this one for the simulation.
+
 module mvm (
 	clk,
 	rst,
@@ -403,11 +405,11 @@ input  wire [ 8:0] waddr;
 input  wire [ 8:0] raddr;
 output wire [31:0] rdata;
 
-wire [39:0] rtemp;
-wire [39:0] wtemp;
+wire [31:0] rtemp;
+wire [31:0] wtemp;
 wire [8:0] addrtemp;
 assign rdata = rtemp[31:0];
-assign wtemp = {8'd0, wdata};
+assign wtemp = wdata[31:0];
 assign addrtemp = waddr | raddr;
 
 single_port_ram bram_instance(
