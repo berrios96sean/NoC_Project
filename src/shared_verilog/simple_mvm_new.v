@@ -1,6 +1,6 @@
 /* Simplified MVM used for FPT'23 */
 
-module mvm_top (
+module mvm (
 	clk,
 	rst,
 	rx_tvalid,
@@ -107,8 +107,6 @@ assign temp_accum_addr = {9'b0, inst_accum_raddr};
 
 dpe_pipeline accum_addr_pipeline (.clk(clk), .rst(rst), .data_in(temp_accum_addr), .data_out(delay_accum_addr));
 
-memory_block accum_mem (.clk(clk), .waddr(delay_accum_addr[8:0]), .wen(dpe_ovalid[0]), .wdata(dpe_results), .raddr(inst_accum_raddr), .rdata(accum_mem_rdata));
-
 wire [8:0] rf_waddr;
 assign rf_waddr = rx_tuser[8:0];
 wire [511:0] rf_wdata;
@@ -118,8 +116,11 @@ assign rf_wen = rx_tuser[24:9];
 wire [511:0] rf_rdata_1, rf_rdata_2, rf_rdata_3, rf_rdata_4, rf_rdata_5, rf_rdata_6, rf_rdata_7, rf_rdata_8,
              rf_rdata_9, rf_rdata_10, rf_rdata_11, rf_rdata_12, rf_rdata_13, rf_rdata_14, rf_rdata_15, rf_rdata_16;
 
-output wire [511:0] dpe_results;
-output wire [15:0] dpe_ovalid;
+wire [511:0] dpe_results;
+wire [15:0] dpe_ovalid;
+
+memory_block accum_mem (.clk(clk), .waddr(delay_accum_addr[8:0]), .wen(dpe_ovalid[0]), .wdata(dpe_results), .raddr(inst_accum_raddr), .rdata(accum_mem_rdata));
+
 
 memory_block rf_01(.clk(clk), .waddr(rf_waddr), .wen(rf_wen[0]), .wdata(rf_wdata), .raddr(inst_rf_raddr), .rdata(rf_rdata_1));
 memory_block rf_02(.clk(clk), .waddr(rf_waddr), .wen(rf_wen[1]), .wdata(rf_wdata), .raddr(inst_rf_raddr), .rdata(rf_rdata_2));
@@ -410,11 +411,11 @@ assign wtemp = {8'd0, wdata};
 assign addrtemp = waddr | raddr;
 
 single_port_ram bram_instance(
-	.clk(clk),
-	.we(wen),
 	.data(wtemp),
-	.addr(addrtemp),
-	.out(rtemp)
+	.q(rtemp),
+	.address(addrtemp),
+	.wren(wen),
+	.clock(clk)
 );
 
 endmodule
@@ -575,15 +576,15 @@ assign tmp_by = {3'b0, by};
 assign result = tmp_result[31:0];
 
 int_sop_2 dsp_instance(
-	.clk(clk),
-	.reset(reset),
-	.ax(tmp_ax),
 	.ay(tmp_ay),
-	.bx(tmp_bx),
 	.by(tmp_by),
+	.ax(tmp_ax),
+	.bx(tmp_bx),
 	.chainin(chainin),
-	.result(tmp_result),
-	.chainout(chainout)
+	.resulta(tmp_result),
+	.chainout(chainout),
+	.clk0(clk),
+	.aclr0(reset)
 );
 
 endmodule
