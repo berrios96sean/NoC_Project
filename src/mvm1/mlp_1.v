@@ -31,16 +31,16 @@ module mlp_1 (
 	 dispatcher2_ififo_rdy,   // external I/O output for dispatcher
 	 dispatcher3_ififo_rdy,   // external I/O output for dispatcher
 	 collector_ofifo_rdy      // external I/O output for collector
-	 
+
 );
 
 parameter noc_dw = 512; //NoC Data Width
-parameter byte_dw = 8; 
+parameter byte_dw = 8;
 
 /*****************INPUT/OUTPUT Definition********************/
 input wire clk;
 input wire reset;
- 
+
 input wire [noc_dw/byte_dw - 1:0] 	dispatcher0_ififo_wdata;
 input wire 									dispatcher0_ififo_wen;
 input wire [noc_dw/byte_dw - 1:0] 	dispatcher1_ififo_wdata;
@@ -373,101 +373,101 @@ wire 							layer3_mvm1_connector_rx_tready;
 
 // dispatcher modules
 dispatcher dispatcher0(
-    .clk(clk),
-    .rst(reset),
-    .tx_tvalid(dispatcher0_tx_valid),
-    .tx_tdata(dispatcher0_tx_tdata),
-	 .tx_tstrb(dispatcher0_tx_tstrb),
-	 .tx_tkeep(dispatcher0_tx_tkeep),
-	 .tx_tid(dispatcher0_tx_tid),
-	 .tx_tdest(dispatcher0_tx_tdest),
-	 .tx_tuser(dispatcher0_tx_tuser),
-	 .tx_tlast(dispatcher0_tx_tlast),
-	 .tx_tready(dispatcher0_connector_tx_tready),
-	 .ififo_wdata(dispatcher0_ififo_wdata),
-	 .ififo_wen(dispatcher0_ififo_wen),
-	 .ififo_rdy(dispatcher0_ififo_rdy)
+    .clk(clk),                                      // Input
+    .rst(reset),                                    // Input
+    .tx_tvalid(dispatcher0_tx_valid),               // Output
+    .tx_tdata(dispatcher0_tx_tdata),                // Output
+	.tx_tstrb(dispatcher0_tx_tstrb),                // Output
+	.tx_tkeep(dispatcher0_tx_tkeep),                // Output
+	.tx_tid(dispatcher0_tx_tid),                    // Output
+	.tx_tdest(dispatcher0_tx_tdest),                // Output
+	.tx_tuser(dispatcher0_tx_tuser),                // Output
+	.tx_tlast(dispatcher0_tx_tlast),                // Output
+	.tx_tready(dispatcher0_connector_tx_tready),    // Input
+	.ififo_wdata(dispatcher0_ififo_wdata),          // Input
+	.ififo_wen(dispatcher0_ififo_wen),              // Input
+	.ififo_rdy(dispatcher0_ififo_rdy)               // Output
 );
 dispatcher dispatcher1(
-    .clk(clk),
-    .rst(reset),
-    .tx_tvalid(dispatcher1_tx_valid),
-    .tx_tdata(dispatcher1_tx_tdata),
-	 .tx_tstrb(dispatcher1_tx_tstrb),
-	 .tx_tkeep(dispatcher1_tx_tkeep),
-	 .tx_tid(dispatcher1_tx_tid),
-	 .tx_tdest(dispatcher1_tx_tdest),
-	 .tx_tuser(dispatcher1_tx_tuser),
-	 .tx_tlast(dispatcher1_tx_tlast),
-	 .tx_tready(dispatcher1_connector_tx_tready),
-	 .ififo_wdata(dispatcher1_ififo_wdata),
-	 .ififo_wen(dispatcher1_ififo_wen),
-	 .ififo_rdy(dispatcher1_ififo_rdy)
+    .clk(clk),                                      // Input
+    .rst(reset),                                    // Input
+    .tx_tvalid(dispatcher1_tx_valid),               // Output
+    .tx_tdata(dispatcher1_tx_tdata),                // Output
+	 .tx_tstrb(dispatcher1_tx_tstrb),               // Output
+	 .tx_tkeep(dispatcher1_tx_tkeep),               // Output
+	 .tx_tid(dispatcher1_tx_tid),                   // Output
+	 .tx_tdest(dispatcher1_tx_tdest),               // Output
+	 .tx_tuser(dispatcher1_tx_tuser),               // Output
+	 .tx_tlast(dispatcher1_tx_tlast),               // Output
+	 .tx_tready(dispatcher1_connector_tx_tready),   // Input
+	 .ififo_wdata(dispatcher1_ififo_wdata),         // Input
+	 .ififo_wen(dispatcher1_ififo_wen),             // Input
+	 .ififo_rdy(dispatcher1_ififo_rdy)              // Output
 );
 dispatcher dispatcher2(
-    .clk(clk),
-    .rst(reset),
-    .tx_tvalid(dispatcher2_tx_valid),
-    .tx_tdata(dispatcher2_tx_tdata),
-	 .tx_tstrb(dispatcher2_tx_tstrb),
-	 .tx_tkeep(dispatcher2_tx_tkeep),
-	 .tx_tid(dispatcher2_tx_tid),
-	 .tx_tdest(dispatcher2_tx_tdest),
-	 .tx_tuser(dispatcher2_tx_tuser),
-	 .tx_tlast(dispatche2_tx_tlast),
-	 .tx_tready(dispatcher2_connector_tx_tready),
-	 .ififo_wdata(dispatcher2_ififo_wdata),
-	 .ififo_wen(dispatcher2_ififo_wen),
-	 .ififo_rdy(dispatcher2_ififo_rdy)
+    .clk(clk),                                      // Input
+    .rst(reset),                                    // Input
+    .tx_tvalid(dispatcher2_tx_valid),               // Output
+    .tx_tdata(dispatcher2_tx_tdata),                // Output
+	 .tx_tstrb(dispatcher2_tx_tstrb),               // Output
+	 .tx_tkeep(dispatcher2_tx_tkeep),               // Output
+	 .tx_tid(dispatcher2_tx_tid),                   // Output
+	 .tx_tdest(dispatcher2_tx_tdest),               // Output
+	 .tx_tuser(dispatcher2_tx_tuser),               // Output
+	 .tx_tlast(dispatche2_tx_tlast),                // Output
+	 .tx_tready(dispatcher2_connector_tx_tready),   // Input
+	 .ififo_wdata(dispatcher2_ififo_wdata),         // Input
+	 .ififo_wen(dispatcher2_ififo_wen),             // Input
+	 .ififo_rdy(dispatcher2_ififo_rdy)              // Output
 );
 dispatcher dispatcher3(
-    .clk(clk),
-    .rst(reset),
-    .tx_tvalid(dispatcher3_tx_valid),
-    .tx_tdata(dispatcher3_tx_tdata),
-	 .tx_tstrb(dispatcher3_tx_tstrb),
-	 .tx_tkeep(dispatcher3_tx_tkeep),
-	 .tx_tid(dispatcher3_tx_tid),
-	 .tx_tdest(dispatcher3_tx_tdest),
-	 .tx_tuser(dispatcher3_tx_tuser),
-	 .tx_tlast(dispatcher3_tx_tlast),
-	 .tx_tready(dispatcher3_connector_tx_tready),
-	 .ififo_wdata(dispatcher3_ififo_wdata),
-	 .ififo_wen(dispatcher3_ififo_wen),
-	 .ififo_rdy(dispatcher3_ififo_rdy)
+    .clk(clk),                                      // Input
+    .rst(reset),                                    // Input
+    .tx_tvalid(dispatcher3_tx_valid),               // Output
+    .tx_tdata(dispatcher3_tx_tdata),                // Output
+	 .tx_tstrb(dispatcher3_tx_tstrb),               // Output
+	 .tx_tkeep(dispatcher3_tx_tkeep),               // Output
+	 .tx_tid(dispatcher3_tx_tid),                   // Output
+	 .tx_tdest(dispatcher3_tx_tdest),               // Output
+	 .tx_tuser(dispatcher3_tx_tuser),               // Output
+	 .tx_tlast(dispatcher3_tx_tlast),               // Output
+	 .tx_tready(dispatcher3_connector_tx_tready),   // Input
+	 .ififo_wdata(dispatcher3_ififo_wdata),         // Input
+	 .ififo_wen(dispatcher3_ififo_wen),             // Input
+	 .ififo_rdy(dispatcher3_ififo_rdy)              // Output
 );
 
 
 // dispatcher router blocks
 noc_router_adapter_block noc_router_input_dispatcher0(
-	 .clk(clk),
-    .reset(reset),
-    .master_tready(1'd0),
-    .master_tdata(),
-	 .master_tvalid(),
-    .master_tstrb(),
-    .master_tkeep(),
-    .master_tid(),
-    .master_tdest(),
-    .master_tuser(),
-    .master_tlast(),
-    .slave_tvalid(dispatcher0_tx_valid),
-    .slave_tready(dispatcher0_connector_tx_tready), 
-    .slave_tdata(dispatcher0_tx_tdata),
-    .slave_tstrb(dispatcher0_tx_tstrb),
-    .slave_tkeep(dispatcher0_tx_tkeep),
-    .slave_tid(dispatcher0_tx_tid),
-    .slave_tdest(dispatcher0_tx_tdest),
-    .slave_tuser(dispatcher0_tx_tuser),
-    .slave_tlast(dispatcher0_tx_tlast)
+	 .clk(clk),                                         // Input
+    .reset(reset),                                      // Input
+    .master_tready(1'd0),                               // Input
+    .master_tdata(),                                    // Output
+	 .master_tvalid(),                                  // Output
+    .master_tstrb(),                                    // Output
+    .master_tkeep(),                                    // Output
+    .master_tid(),                                      // Output
+    .master_tdest(),                                    // Output
+    .master_tuser(),                                    // Output
+    .master_tlast(),                                    // Output
+    .slave_tvalid(dispatcher0_tx_valid),                // Input
+    .slave_tready(dispatcher0_connector_tx_tready),     // Output
+    .slave_tdata(dispatcher0_tx_tdata),                 // Input
+    .slave_tstrb(dispatcher0_tx_tstrb),                 // Input
+    .slave_tkeep(dispatcher0_tx_tkeep),                 // Input
+    .slave_tid(dispatcher0_tx_tid),                     // Input
+    .slave_tdest(dispatcher0_tx_tdest),                 // Input
+    .slave_tuser(dispatcher0_tx_tuser),                 // Input
+    .slave_tlast(dispatcher0_tx_tlast)                  // Input
 
 );
 noc_router_adapter_block noc_router_input_dispatcher1(
-	 .clk(clk),
+	.clk(clk),
     .reset(reset),
     .master_tready(1'd0),
     .master_tdata(),
-	 .master_tvalid(),
+    .master_tvalid(),
     .master_tstrb(),
     .master_tkeep(),
     .master_tid(),
@@ -475,7 +475,7 @@ noc_router_adapter_block noc_router_input_dispatcher1(
     .master_tuser(),
     .master_tlast(),
     .slave_tvalid(dispatcher1_tx_valid),
-    .slave_tready(dispatcher1_connector_tx_tready), 
+    .slave_tready(dispatcher1_connector_tx_tready),
     .slave_tdata(dispatcher1_tx_tdata),
     .slave_tstrb(dispatcher1_tx_tstrb),
     .slave_tkeep(dispatcher1_tx_tkeep),
@@ -498,7 +498,7 @@ noc_router_adapter_block noc_router_input_dispatcher2(
     .master_tuser(),
     .master_tlast(),
     .slave_tvalid(dispatcher2_tx_valid),
-    .slave_tready(dispatcher2_connector_tx_tready), 
+    .slave_tready(dispatcher2_connector_tx_tready),
     .slave_tdata(dispatcher2_tx_tdata),
     .slave_tstrb(dispatcher2_tx_tstrb),
     .slave_tkeep(dispatcher2_tx_tkeep),
@@ -521,7 +521,7 @@ noc_router_adapter_block noc_router_input_dispatcher3(
     .master_tuser(),
     .master_tlast(),
     .slave_tvalid(dispatcher3_tx_valid),
-    .slave_tready(dispatcher3_connector_tx_tready), 
+    .slave_tready(dispatcher3_connector_tx_tready),
     .slave_tdata(dispatcher3_tx_tdata),
     .slave_tstrb(dispatcher3_tx_tstrb),
     .slave_tkeep(dispatcher3_tx_tkeep),
@@ -535,26 +535,26 @@ noc_router_adapter_block noc_router_input_dispatcher3(
 
 // mvm module declarations (layer 0)
 mvm layer0_mvm0(
-	.clk(clk),
-    .rst(reset),
-    .rx_tvalid(layer0_mvm0_rx_tvalid),
-    .rx_tdata(layer0_mvm0_rx_tdata),
-	 .rx_tstrb(layer0_mvm0_rx_tstrb),
-    .rx_tkeep(layer0_mvm0_rx_tkeep),
-    .rx_tid(layer0_mvm0_rx_tid),
-    .rx_tdest(layer0_mvm0_rx_tdest),
-    .rx_tuser(layer0_mvm0_rx_tuser),
-    .rx_tlast(layer0_mvm0_rx_tlast),
-    .rx_tready(layer0_mvm0_connector_rx_tready),
-    .tx_tvalid(layer0_mvm0_tx_valid),
-    .tx_tdata(layer0_mvm0_tx_tdata), 
-    .tx_tstrb(layer0_mvm0_tx_tstrb),
-    .tx_tkeep(layer0_mvm0_tx_tkeep),
-    .tx_tid(layer0_mvm0_tx_tid),
-    .tx_tdest(layer0_mvm0_tx_tdest),
-    .tx_tuser(layer0_mvm0_tx_tuser),
-    .tx_tlast(layer0_mvm0_tx_tlast),
-    .tx_tready(layer0_mvm0_connector_tx_tready)
+	.clk(clk),                                        // Input
+    .rst(reset),                                      // Input
+    .rx_tvalid(layer0_mvm0_rx_tvalid),                // Input
+    .rx_tdata(layer0_mvm0_rx_tdata),                  // Input
+	.rx_tstrb(layer0_mvm0_rx_tstrb),                  // Input
+    .rx_tkeep(layer0_mvm0_rx_tkeep),                  // Input
+    .rx_tid(layer0_mvm0_rx_tid),                      // Input
+    .rx_tdest(layer0_mvm0_rx_tdest),                  // Input
+    .rx_tuser(layer0_mvm0_rx_tuser),                  // Input
+    .rx_tlast(layer0_mvm0_rx_tlast),                  // Input
+    .rx_tready(layer0_mvm0_connector_rx_tready),      // Output
+    .tx_tvalid(layer0_mvm0_tx_valid),                 // Output
+    .tx_tdata(layer0_mvm0_tx_tdata),                  // Output
+    .tx_tstrb(layer0_mvm0_tx_tstrb),                  // Output
+    .tx_tkeep(layer0_mvm0_tx_tkeep),                  // Output
+    .tx_tid(layer0_mvm0_tx_tid),                      // Output
+    .tx_tdest(layer0_mvm0_tx_tdest),                  // Output
+    .tx_tuser(layer0_mvm0_tx_tuser),                  // Output
+    .tx_tlast(layer0_mvm0_tx_tlast),                  // Output
+    .tx_tready(layer0_mvm0_connector_tx_tready)       // Input
 
 );
 mvm layer0_mvm1(
@@ -570,7 +570,7 @@ mvm layer0_mvm1(
     .rx_tlast(layer0_mvm1_rx_tlast),
     .rx_tready(layer0_mvm1_connector_rx_tready),
     .tx_tvalid(layer0_mvm1_tx_valid),
-    .tx_tdata(layer0_mvm1_tx_tdata), 
+    .tx_tdata(layer0_mvm1_tx_tdata),
     .tx_tstrb(layer0_mvm1_tx_tstrb),
     .tx_tkeep(layer0_mvm1_tx_tkeep),
     .tx_tid(layer0_mvm1_tx_tid),
@@ -593,7 +593,7 @@ mvm layer0_mvm2(
     .rx_tlast(layer0_mvm2_rx_tlast),
     .rx_tready(layer0_mvm2_connector_rx_tready),
     .tx_tvalid(layer0_mvm2_tx_valid),
-    .tx_tdata(layer0_mvm2_tx_tdata), 
+    .tx_tdata(layer0_mvm2_tx_tdata),
     .tx_tstrb(layer0_mvm2_tx_tstrb),
     .tx_tkeep(layer0_mvm2_tx_tkeep),
     .tx_tid(layer0_mvm2_tx_tid),
@@ -616,7 +616,7 @@ mvm layer0_mvm3(
     .rx_tlast(layer0_mvm3_rx_tlast),
     .rx_tready(layer0_mvm3_connector_rx_tready),
     .tx_tvalid(layer0_mvm3_tx_valid),
-    .tx_tdata(layer0_mvm3_tx_tdata), 
+    .tx_tdata(layer0_mvm3_tx_tdata),
     .tx_tstrb(layer0_mvm3_tx_tstrb),
     .tx_tkeep(layer0_mvm3_tx_tkeep),
     .tx_tid(layer0_mvm3_tx_tid),
@@ -641,7 +641,7 @@ mvm layer1_mvm0(
     .rx_tlast(layer1_mvm0_rx_tlast),
     .rx_tready(layer1_mvm0_connector_rx_tready),
     .tx_tvalid(layer1_mvm0_tx_valid),
-    .tx_tdata(layer1_mvm0_tx_tdata), 
+    .tx_tdata(layer1_mvm0_tx_tdata),
     .tx_tstrb(layer1_mvm0_tx_tstrb),
     .tx_tkeep(layer1_mvm0_tx_tkeep),
     .tx_tid(layer1_mvm0_tx_tid),
@@ -664,7 +664,7 @@ mvm layer1_mvm1(
     .rx_tlast(layer1_mvm1_rx_tlast),
     .rx_tready(layer1_mvm1_connector_rx_tready),
     .tx_tvalid(layer1_mvm1_tx_valid),
-    .tx_tdata(layer1_mvm1_tx_tdata), 
+    .tx_tdata(layer1_mvm1_tx_tdata),
     .tx_tstrb(layer1_mvm1_tx_tstrb),
     .tx_tkeep(layer1_mvm1_tx_tkeep),
     .tx_tid(layer1_mvm1_tx_tid),
@@ -687,7 +687,7 @@ mvm layer1_mvm2(
     .rx_tlast(layer1_mvm2_rx_tlast),
     .rx_tready(layer1_mvm2_connector_rx_tready),
     .tx_tvalid(layer1_mvm2_tx_valid),
-    .tx_tdata(layer1_mvm2_tx_tdata), 
+    .tx_tdata(layer1_mvm2_tx_tdata),
     .tx_tstrb(layer1_mvm2_tx_tstrb),
     .tx_tkeep(layer1_mvm2_tx_tkeep),
     .tx_tid(layer1_mvm2_tx_tid),
@@ -713,7 +713,7 @@ mvm layer2_mvm0(
     .rx_tlast(layer2_mvm0_rx_tlast),
     .rx_tready(layer2_mvm0_connector_rx_tready),
     .tx_tvalid(layer2_mvm0_tx_valid),
-    .tx_tdata(layer2_mvm0_tx_tdata), 
+    .tx_tdata(layer2_mvm0_tx_tdata),
     .tx_tstrb(layer2_mvm0_tx_tstrb),
     .tx_tkeep(layer2_mvm0_tx_tkeep),
     .tx_tid(layer2_mvm0_tx_tid),
@@ -736,7 +736,7 @@ mvm layer2_mvm1(
     .rx_tlast(layer2_mvm1_rx_tlast),
     .rx_tready(layer2_mvm1_connector_rx_tready),
     .tx_tvalid(layer2_mvm1_tx_valid),
-    .tx_tdata(layer2_mvm1_tx_tdata), 
+    .tx_tdata(layer2_mvm1_tx_tdata),
     .tx_tstrb(layer2_mvm1_tx_tstrb),
     .tx_tkeep(layer2_mvm1_tx_tkeep),
     .tx_tid(layer2_mvm1_tx_tid),
@@ -761,7 +761,7 @@ mvm layer3_mvm0(
     .rx_tlast(layer3_mvm0_rx_tlast),
     .rx_tready(layer3_mvm0_connector_rx_tready),
     .tx_tvalid(layer3_mvm0_tx_valid),
-    .tx_tdata(layer3_mvm0_tx_tdata), 
+    .tx_tdata(layer3_mvm0_tx_tdata),
     .tx_tstrb(layer3_mvm0_tx_tstrb),
     .tx_tkeep(layer3_mvm0_tx_tkeep),
     .tx_tid(layer3_mvm0_tx_tid),
@@ -784,7 +784,7 @@ mvm layer3_mvm1(
     .rx_tlast(layer3_mvm1_rx_tlast),
     .rx_tready(layer3_mvm1_connector_rx_tready),
     .tx_tvalid(layer3_mvm1_tx_valid),
-    .tx_tdata(layer3_mvm1_tx_tdata), 
+    .tx_tdata(layer3_mvm1_tx_tdata),
     .tx_tstrb(layer3_mvm1_tx_tstrb),
     .tx_tkeep(layer3_mvm1_tx_tkeep),
     .tx_tid(layer3_mvm1_tx_tid),
@@ -809,7 +809,7 @@ mvm layer3_mvm1(
     .rx_tlast(mvm_rx_tlast),
     .rx_tready(dp_connector_tx_tready),
     .tx_tvalid(ct_rx_valid),
-    .tx_tdata(ct_rx_tdata), 
+    .tx_tdata(ct_rx_tdata),
     .tx_tstrb(ct_rx_tstrb),
     .tx_tkeep(ct_rx_tkeep),
     .tx_tid(ct_rx_tid),
@@ -835,7 +835,7 @@ noc_router_adapter_block noc_router_layer0_mvm0(
     .master_tuser(layer0_mvm0_rx_tuser),
     .master_tlast(layer0_mvm0_rx_tlast),
     .slave_tvalid(layer0_mvm0_tx_valid),
-    .slave_tready(layer0_mvm0_connector_tx_tready), 
+    .slave_tready(layer0_mvm0_connector_tx_tready),
     .slave_tdata(layer0_mvm0_tx_tdata),
     .slave_tstrb(layer0_mvm0_tx_tstrb),
     .slave_tkeep(layer0_mvm0_tx_tkeep),
@@ -857,7 +857,7 @@ noc_router_adapter_block noc_router_layer0_mvm1(
     .master_tuser(layer0_mvm1_rx_tuser),
     .master_tlast(layer0_mvm1_rx_tlast),
     .slave_tvalid(layer0_mvm1_tx_valid),
-    .slave_tready(layer0_mvm1_connector_tx_tready), 
+    .slave_tready(layer0_mvm1_connector_tx_tready),
     .slave_tdata(layer0_mvm1_tx_tdata),
     .slave_tstrb(layer0_mvm1_tx_tstrb),
     .slave_tkeep(layer0_mvm1_tx_tkeep),
@@ -879,7 +879,7 @@ noc_router_adapter_block noc_router_layer0_mvm2(
     .master_tuser(layer0_mvm2_rx_tuser),
     .master_tlast(layer0_mvm2_rx_tlast),
     .slave_tvalid(layer0_mvm2_tx_valid),
-    .slave_tready(layer0_mvm2_connector_tx_tready), 
+    .slave_tready(layer0_mvm2_connector_tx_tready),
     .slave_tdata(layer0_mvm2_tx_tdata),
     .slave_tstrb(layer0_mvm2_tx_tstrb),
     .slave_tkeep(layer0_mvm2_tx_tkeep),
@@ -901,7 +901,7 @@ noc_router_adapter_block noc_router_layer0_mvm3(
     .master_tuser(layer0_mvm3_rx_tuser),
     .master_tlast(layer0_mvm3_rx_tlast),
     .slave_tvalid(layer0_mvm3_tx_valid),
-    .slave_tready(layer0_mvm3_connector_tx_tready), 
+    .slave_tready(layer0_mvm3_connector_tx_tready),
     .slave_tdata(layer0_mvm3_tx_tdata),
     .slave_tstrb(layer0_mvm3_tx_tstrb),
     .slave_tkeep(layer0_mvm3_tx_tkeep),
@@ -925,7 +925,7 @@ noc_router_adapter_block noc_router_layer1_mvm0(
     .master_tuser(layer1_mvm0_rx_tuser),
     .master_tlast(layer1_mvm0_rx_tlast),
     .slave_tvalid(layer1_mvm0_tx_valid),
-    .slave_tready(layer1_mvm0_connector_tx_tready), 
+    .slave_tready(layer1_mvm0_connector_tx_tready),
     .slave_tdata(layer1_mvm0_tx_tdata),
     .slave_tstrb(layer1_mvm0_tx_tstrb),
     .slave_tkeep(layer1_mvm0_tx_tkeep),
@@ -947,7 +947,7 @@ noc_router_adapter_block noc_router_layer1_mvm1(
     .master_tuser(layer1_mvm1_rx_tuser),
     .master_tlast(layer1_mvm1_rx_tlast),
     .slave_tvalid(layer1_mvm1_tx_valid),
-    .slave_tready(layer1_mvm1_connector_tx_tready), 
+    .slave_tready(layer1_mvm1_connector_tx_tready),
     .slave_tdata(layer1_mvm1_tx_tdata),
     .slave_tstrb(layer1_mvm1_tx_tstrb),
     .slave_tkeep(layer1_mvm1_tx_tkeep),
@@ -969,7 +969,7 @@ noc_router_adapter_block noc_router_layer1_mvm2(
     .master_tuser(layer1_mvm2_rx_tuser),
     .master_tlast(layer1_mvm2_rx_tlast),
     .slave_tvalid(layer1_mvm2_tx_valid),
-    .slave_tready(layer1_mvm2_connector_tx_tready), 
+    .slave_tready(layer1_mvm2_connector_tx_tready),
     .slave_tdata(layer1_mvm2_tx_tdata),
     .slave_tstrb(layer1_mvm2_tx_tstrb),
     .slave_tkeep(layer1_mvm2_tx_tkeep),
@@ -994,7 +994,7 @@ noc_router_adapter_block noc_router_layer2_mvm0(
     .master_tuser(layer2_mvm0_rx_tuser),
     .master_tlast(layer2_mvm0_rx_tlast),
     .slave_tvalid(layer2_mvm0_tx_valid),
-    .slave_tready(layer2_mvm0_connector_tx_tready), 
+    .slave_tready(layer2_mvm0_connector_tx_tready),
     .slave_tdata(layer2_mvm0_tx_tdata),
     .slave_tstrb(layer2_mvm0_tx_tstrb),
     .slave_tkeep(layer2_mvm0_tx_tkeep),
@@ -1016,7 +1016,7 @@ noc_router_adapter_block noc_router_layer2_mvm1(
     .master_tuser(layer2_mvm1_rx_tuser),
     .master_tlast(layer2_mvm1_rx_tlast),
     .slave_tvalid(layer2_mvm1_tx_valid),
-    .slave_tready(layer2_mvm1_connector_tx_tready), 
+    .slave_tready(layer2_mvm1_connector_tx_tready),
     .slave_tdata(layer2_mvm1_tx_tdata),
     .slave_tstrb(layer2_mvm1_tx_tstrb),
     .slave_tkeep(layer2_mvm1_tx_tkeep),
@@ -1040,7 +1040,7 @@ noc_router_adapter_block noc_router_layer3_mvm0(
     .master_tuser(layer3_mvm0_rx_tuser),
     .master_tlast(layer3_mvm0_rx_tlast),
     .slave_tvalid(layer3_mvm0_tx_valid),
-    .slave_tready(layer3_mvm0_connector_tx_tready), 
+    .slave_tready(layer3_mvm0_connector_tx_tready),
     .slave_tdata(layer3_mvm0_tx_tdata),
     .slave_tstrb(layer3_mvm0_tx_tstrb),
     .slave_tkeep(layer3_mvm0_tx_tkeep),
@@ -1062,7 +1062,7 @@ noc_router_adapter_block noc_router_layer3_mvm1(
     .master_tuser(layer3_mvm1_rx_tuser),
     .master_tlast(layer3_mvm1_rx_tlast),
     .slave_tvalid(layer3_mvm1_tx_valid),
-    .slave_tready(layer3_mvm1_connector_tx_tready), 
+    .slave_tready(layer3_mvm1_connector_tx_tready),
     .slave_tdata(layer3_mvm1_tx_tdata),
     .slave_tstrb(layer3_mvm1_tx_tstrb),
     .slave_tkeep(layer3_mvm1_tx_tkeep),
@@ -1086,7 +1086,7 @@ noc_router_adapter_block noc_router_output_collector(
     .master_tuser(collector_rx_tuser),
     .master_tlast(collector_rx_tlast),
     .slave_tvalid(1'd0),
-    .slave_tready(), 
+    .slave_tready(),
     .slave_tdata(32'd0),
     .slave_tstrb(8'd0),
     .slave_tkeep(8'd0),
