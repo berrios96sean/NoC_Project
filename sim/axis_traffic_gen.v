@@ -19,6 +19,9 @@ always @(posedge clk) begin
         end else if (axis_tvalid == 0) begin
             axis_tdata  <= axis_tdata + 1; 
             axis_tvalid <= 1;
+        end else if (axis_tready == 0) begin 
+            axis_tdata  <= 0;
+            axis_tvalid <= 0; 
         end
     end
 end

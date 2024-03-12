@@ -22,12 +22,18 @@ add wave -noupdate /mvm1_tb/DUT/dispatcher0/fifo_full_signal
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/fifo_almost_full_signal
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/fifo_empty_signal
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/fifo_rdata
-add wave -noupdate /mvm1_tb/DUT/dispatcher0/fifo_wdata
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/tx_tvalid
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/tx_tdata
 add wave -noupdate /mvm1_tb/DUT/dispatcher0/tx_tready
+add wave -noupdate /mvm1_tb/DUT/dispatcher0_ififo_rdy
+add wave -noupdate /mvm1_tb/DUT/dispatcher1_ififo_rdy
+add wave -noupdate /mvm1_tb/DUT/dispatcher2_ififo_rdy
+add wave -noupdate /mvm1_tb/DUT/dispatcher3_ififo_rdy
+add wave -noupdate /mvm1_tb/DUT/dispatcher0/tx_tdata
+add wave -noupdate /mvm1_tb/DUT/dispatcher0/ififo_rdy
+add wave -noupdate /mvm1_tb/DUT/dispatcher0/tx_tready
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1022454 ps} 0}
+WaveRestoreCursors {{Cursor 1} {717904 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 290
 configure wave -valuecolwidth 100
@@ -43,4 +49,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {170213 ps} {2359463 ps}
+WaveRestoreZoom {0 ps} {2362500 ps}
