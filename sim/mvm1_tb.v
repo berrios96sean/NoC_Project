@@ -87,7 +87,7 @@ initial begin
     reset = 0;
 
 
-    #10000 $finish;
+    #2000 $finish;
 
 end
 
