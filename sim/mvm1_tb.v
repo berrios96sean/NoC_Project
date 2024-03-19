@@ -61,12 +61,12 @@ mlp_1 DUT (
     .reset(reset),                                       // Input
     .dispatcher0_ififo_wdata(dispatcher0_ififo_wdata),   // Input 
     .dispatcher0_ififo_wen(dispatcher0_ififo_wen),       // Input 
-    .dispatcher1_ififo_wdata(dispatcher0_ififo_wdata),   // Input 
-    .dispatcher1_ififo_wen(dispatcher0_ififo_wen),       // Input 
-    .dispatcher2_ififo_wdata(dispatcher0_ififo_wdata),   // Input 
-    .dispatcher2_ififo_wen(dispatcher0_ififo_wen),       // Input 
-    .dispatcher3_ififo_wdata(dispatcher0_ififo_wdata),   // Input 
-    .dispatcher3_ififo_wen(dispatcher0_ififo_wen),       // Input 
+    .dispatcher1_ififo_wdata(dispatcher1_ififo_wdata),   // Input 
+    .dispatcher1_ififo_wen(dispatcher1_ififo_wen),       // Input 
+    .dispatcher2_ififo_wdata(dispatcher2_ififo_wdata),   // Input 
+    .dispatcher2_ififo_wen(dispatcher2_ififo_wen),       // Input 
+    .dispatcher3_ififo_wdata(dispatcher3_ififo_wdata),   // Input 
+    .dispatcher3_ififo_wen(dispatcher3_ififo_wen),       // Input 
     .collector_ofifo_rdata(collector_ofifo_rdata),       // Output 
     .collector_ofifo_ren(collector_ofifo_ren),           // Input 
     .dispatcher0_ififo_rdy(dispatcher0_ififo_rdy),       // Output
